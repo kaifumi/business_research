@@ -1,0 +1,13 @@
+WebサーバーのNginxでは単独では動的コンテンツを扱えないので
+処理をRailsへと渡すためにアプリケーションサーバーへ任せる働きをもつ
+
+そこで、Pumaやunicornと連携する
+この仕組の中でNGINXの役割を「リバースプロキシ」という。
+
+PumaはRailsからRack（通訳みたいなもの）を通して受け取ったファイルを
+NGINXへ渡す。ここでNGINXは静的ファイルを手にして扱うことができる。
+
+Pumaとunicornでは
+Pumaの方が速く、rails標準においての推奨Webサーバーのためによく使用される。
+
+https://qiita.com/takahiro1127/items/fcb81753eaf381b4b33c
